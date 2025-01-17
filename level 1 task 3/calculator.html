@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:rgba(172,181,150,255);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+            gap: 10px;
+            background-color: #3a6049;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(159,154,122,255);
+        }
+        .display {
+            grid-column: span 2;
+            background-color: rgba(73,105,82,255);
+            color: #e4f3e7;
+            font-size: 2.5em;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            background-color: #063b04;
+            color: #fff;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background-color: #767c72;
+        }
+        .btn:active {
+            background-color: #9f6c6c;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .btn.equal {
+            grid-column: span 2;
+            background-color: #287233;
+        }
+        .btn.equal:hover {
+            background-color: #6c946a;
+        }
+        .btn.equal:active {
+            background-color: #9f6c6c;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <button class="btn" onclick="clearDisplay()">ON/AC</button>
+        <button class="btn">GT</button>
+        <button class="btn" onclick="memoryRecall()">MRC</button>
+        <button class="btn" onclick="memoryAdd()">M+</button>
+        <button class="btn" onclick="memorySubtract()">M-</button>
+        <button class="btn" onclick="inputValue('/')">÷</button>
+        <button class="btn" onclick="inputValue('7')">7</button>
+        <button class="btn" onclick="inputValue('8')">8</button>
+        <button class="btn" onclick="inputValue('9')">9</button>
+        <button class="btn" onclick="inputValue('*')">x</button>        
+        <button class="btn" onclick="inputValue('4')">4</button>
+        <button class="btn" onclick="inputValue('5')">5</button>
+        <button class="btn" onclick="inputValue('6')">6</button> 
+        <button class="btn" onclick="inputValue('-')">-</button>       
+        <button class="btn" onclick="inputValue('1')">1</button>        
+        <button class="btn" onclick="inputValue('2')">2</button>
+        <button class="btn" onclick="inputValue('3')">3</button> 
+        <button class="btn" onclick="inputValue('+')">+</button>      
+        <button class="btn" onclick="inputValue('0')">0</button>      
+        <button class="btn" onclick="inputValue('.')">.</button>      
+        <button class="btn equal" onclick="calculateResult()">=</button>
+        
+    </div>
+    <script>
+        let display = document.getElementById('display');
+        let memory = 0;
+        let currentInput = '';
+
+        function inputValue(val) {
+            currentInput += val;
+            display.textContent = currentInput;
+        }
+
+        function clearDisplay() {
+            currentInput = '';
+            display.textContent = '0';
+        }
+
+        function calculateResult() {
+            try {
+                currentInput = eval(currentInput).toString();
+                display.textContent = currentInput;
+            } catch {
+                display.textContent = 'Error';
+                currentInput = '';
+            }
+        }
+
+        function memoryRecall() {
+            display.textContent = memory;
+            currentInput = memory.toString();
+        }
+
+        function memoryAdd() {
+            memory += parseFloat(currentInput);
+            clearDisplay();
+        }
+
+        function memorySubtract() {
+            memory -= parseFloat(currentInput);
+            clearDisplay();
+        }
+    </script>
+    
+</body>
+</html>

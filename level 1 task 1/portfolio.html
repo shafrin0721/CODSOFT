@@ -266,28 +266,28 @@
             position: fixed;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
-            animation: slideDown 0.5s ease; /* Animation for navbar */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+            animation: slideDown 0.5s ease;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px; /* Adjusted for better responsiveness */
+            max-width: 1200px; 
             margin: 0 auto;
-            padding: 0 20px; /* Reduced padding for smaller screens */
+            padding: 0 20px; 
         }
 
         .logo {
-            color: #ffffff; /* Changed logo color to white */
-            font-size: 1.5rem; /* Adjusted font size for visibility */
-            text-decoration: none; /* Removed underline */
-            transition: transform 0.3s; /* Added transition for logo */
+            color: #ffffff; 
+            font-size: 1.5rem; 
+            text-decoration: none; 
+            transition: transform 0.3s; 
         }
 
         .logo:hover {
-            transform: scale(1.1); /* Scale effect on hover */
+            transform: scale(1.1); 
         }
 
         .nav-links {
@@ -300,25 +300,25 @@
             color: var(--text-color);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s, transform 0.3s; /* Added transition for hover effect */
-            padding: 0.5rem 0; /* Added padding for better click area */
+            transition: color 0.3s, transform 0.3s; 
+            padding: 0.5rem 0; 
         }
 
         .nav-links a:hover {
             color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color); /* Added underline effect */
-            transform: translateY(-2px); /* Lift effect on hover */
+            border-bottom: 2px solid var(--accent-color); 
+            transform: translateY(-2px);
         }
 
         /* About Section Styles */
         .about {
-            padding: 80px 0; /* Added padding for spacing */
-            background: #1a1a1a; /* Background color for the about section */
+            padding: 80px 0; 
+            background: #1a1a1a; 
         }
 
         .section-header {
-            text-align: center; /* Centered section header */
-            margin-bottom: 40px; /* Spacing below the header */
+            text-align: center; 
+            margin-bottom: 40px; 
         }
 
         .section-header h2 {
@@ -329,37 +329,37 @@
 
         .section-header h3 {
             font-size: 1.5rem;
-            color: #ffffff; /* Color for the subtitle */
+            color: #ffffff; 
         }
 
         .about-content {
             display: flex;
-            flex-direction: row; /* Flex layout for image and text */
+            flex-direction: row;
             align-items: center;
-            justify-content: center; /* Centered content */
-            gap: 2rem; /* Spacing between image and text */
+            justify-content: center; 
+            gap: 2rem; 
         }
 
         .about-img {
-            flex: 1; /* Allow image to take available space */
-            max-width: 300px; /* Set max width for the image */
+            flex: 1; 
+            max-width: 300px; 
         }
 
         .about-img img {
             width: 100%;
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 10px; /* Rounded corners for the image */
-            animation: fadeIn 0.5s; /* Fade-in animation for the image */
+            height: auto; 
+            border-radius: 10px; 
+            animation: fadeIn 0.5s; 
         }
 
         .about-text {
-            flex: 2; /* Allow text to take more space */
-            color: #ffffff; /* Text color */
+            flex: 2; 
+            color: #ffffff; 
         }
 
         .about-text p {
             font-size: 1.1rem;
-            margin-bottom: 1.5rem; /* Spacing below the paragraph */
+            margin-bottom: 1.5rem; 
         }
 
         .btn {
@@ -372,19 +372,19 @@
             font-weight: 600;
             letter-spacing: 1px;
             text-decoration: none;
-            transition: background 0.3s, transform 0.3s; /* Added transition for button */
+            transition: background 0.3s, transform 0.3s; 
         }
 
         .btn:hover {
             background: #d49544;
-            transform: translateY(-2px); /* Lift effect on hover */
+            transform: translateY(-2px); 
         }
 
         /* Skills Section Styles */
         .skills {
             background: #1a1a1a;
-            padding: 40px 0; /* Added padding for better spacing */
-            text-align: center; /* Centered text in the skills section */
+            padding: 40px 0; 
+            text-align: center; 
         }
 
         .skill-item {
@@ -393,8 +393,8 @@
             border-radius: 0.8rem;
             margin-bottom: 1rem;
             border: 1px solid #333333;
-            opacity: 0; /* Start hidden for animation */
-            animation: fadeIn 0.5s forwards; /* Fade-in animation */
+            opacity: 0; 
+            animation: fadeIn 0.5s forwards; 
         }
 
         .skill-item:nth-child(1) { animation-delay: 0.1s; }
@@ -423,8 +423,8 @@
             height: 100%;
             background: #e2a355;
             width: 0;
-            transition: width 1s; /* Smooth transition for progress */
-            animation: fillProgress 1s forwards; /* Animation for filling progress */
+            transition: width 1s; 
+            animation: fillProgress 1s forwards; 
         }
 
         /* Keyframes for animations */
@@ -450,23 +450,23 @@
                 width: 0;
             }
             to {
-                width: 100%; /* Fill to 100% */
+                width: 100%; 
             }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .about-content {
-                flex-direction: column; /* Stack image and text on smaller screens */
-                text-align: center; /* Center text on smaller screens */
+                flex-direction: column; 
+                text-align: center; 
             }
 
             .about-img {
-                margin-bottom: 20px; /* Spacing below the image */
+                margin-bottom: 20px; 
             }
 
             .skills {
-                padding: 20px 0; /* Adjusted padding for smaller screens */
+                padding: 20px 0; 
             }
         }
     </style>
@@ -550,7 +550,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 style="text-align: center;">Skills</h2>
+            <h2 style="text-align: center;"> Professional Skills</h2>
             <div class="skill-item">
                 <div class="skill-name">HTML & CSS</div>
                 <div class="progress-bar">
@@ -575,7 +575,7 @@
                     <div class="progress" style="width: 85%;"></div>
                 </div>
             </div>
-            <h3 style="text-align: center; margin-top: 3rem; font-size: 2rem;">Professional Skills</h3>
+            <h3 style="text-align: center; margin-top: 3rem; font-size: 2rem;"> Skills</h3>
             <div class="skill-item">
                 <div class="skill-name">Computer Skills</div>
                 <div class="progress-bar">

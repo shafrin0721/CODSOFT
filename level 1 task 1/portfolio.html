@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathima Shafrin Shihan - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        :root {
+            --accent-color: #e2a355;
+            --dark-bg: #1a1a1a;
+            --darker-bg: #141414;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('your-background-image.jpg');
+        }
+
+        .header-content {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 0;
+        }
+
+        .title-bar {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        .header-text h1 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-text h2 {
+            font-size: 4rem;
+            color: var(--text-color);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .header-text p {
+            color: #888888;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-container {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            margin: 0 auto;
+            overflow: visible;
+        }
+
+        .profile-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            right: -15%;
+            top: 0;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.3;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #222222;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #333333;
+            color: #ffffff;
+        }
+
+        .service-card:hover {
+            border-color: #e2a355;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills */
+        .skills {
+            background: #1a1a1a;
+        }
+
+        .skill-item {
+            background: #222222;
+            padding: 1.5rem;
+            border-radius: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #333333;
+        }
+
+        .skill-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #333333;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #e2a355;
+            width: 0;
+            transition: width 1s;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #d49544;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #f8f9fa;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: #0a0a0a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .header-text h1 {
+                font-size: 3rem;
+            }
+
+            .header-text p {
+                margin: 0 auto 2rem;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: var(--dark-bg);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
+            animation: slideDown 0.5s ease; /* Animation for navbar */
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px; /* Adjusted for better responsiveness */
+            margin: 0 auto;
+            padding: 0 20px; /* Reduced padding for smaller screens */
+        }
+
+        .logo {
+            color: #ffffff; /* Changed logo color to white */
+            font-size: 1.5rem; /* Adjusted font size for visibility */
+            text-decoration: none; /* Removed underline */
+            transition: transform 0.3s; /* Added transition for logo */
+        }
+
+        .logo:hover {
+            transform: scale(1.1); /* Scale effect on hover */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s; /* Added transition for hover effect */
+            padding: 0.5rem 0; /* Added padding for better click area */
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color); /* Added underline effect */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        /* About Section Styles */
+        .about {
+            padding: 80px 0; /* Added padding for spacing */
+            background: #1a1a1a; /* Background color for the about section */
+        }
+
+        .section-header {
+            text-align: center; /* Centered section header */
+            margin-bottom: 40px; /* Spacing below the header */
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .section-header h3 {
+            font-size: 1.5rem;
+            color: #ffffff; /* Color for the subtitle */
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: row; /* Flex layout for image and text */
+            align-items: center;
+            justify-content: center; /* Centered content */
+            gap: 2rem; /* Spacing between image and text */
+        }
+
+        .about-img {
+            flex: 1; /* Allow image to take available space */
+            max-width: 300px; /* Set max width for the image */
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Rounded corners for the image */
+            animation: fadeIn 0.5s; /* Fade-in animation for the image */
+        }
+
+        .about-text {
+            flex: 2; /* Allow text to take more space */
+            color: #ffffff; /* Text color */
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem; /* Spacing below the paragraph */
+        }
+
+        .btn {
+            background: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s; /* Added transition for button */
+        }
+
+        .btn:hover {
+            background: #d49544;
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        /* Skills Section Styles */
+        .skills {
+            background: #1a1a1a;
+            padding: 40px 0; /* Added padding for better spacing */
+            text-align: center; /* Centered text in the skills section */
+        }
+
+        .skill-item {
+            background: #222222;
+            padding: 1.5rem;
+            border-radius: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #333333;
+            opacity: 0; /* Start hidden for animation */
+            animation: fadeIn 0.5s forwards; /* Fade-in animation */
+        }
+
+        .skill-item:nth-child(1) { animation-delay: 0.1s; }
+        .skill-item:nth-child(2) { animation-delay: 0.2s; }
+        .skill-item:nth-child(3) { animation-delay: 0.3s; }
+        .skill-item:nth-child(4) { animation-delay: 0.4s; }
+        .skill-item:nth-child(5) { animation-delay: 0.5s; }
+        .skill-item:nth-child(6) { animation-delay: 0.6s; }
+        .skill-item:nth-child(7) { animation-delay: 0.7s; }
+        .skill-item:nth-child(8) { animation-delay: 0.8s; }
+
+        .skill-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #333333;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #e2a355;
+            width: 0;
+            transition: width 1s; /* Smooth transition for progress */
+            animation: fillProgress 1s forwards; /* Animation for filling progress */
+        }
+
+        /* Keyframes for animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fillProgress {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%; /* Fill to 100% */
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column; /* Stack image and text on smaller screens */
+                text-align: center; /* Center text on smaller screens */
+            }
+
+            .about-img {
+                margin-bottom: 20px; /* Spacing below the image */
+            }
+
+            .skills {
+                padding: 20px 0; /* Adjusted padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">FSS</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Hello, My Name Is</h1>
+                    <h2>Fathima Shafrin Shihan</h2>
+                    <div class="title-bar">—</div>
+                    <p>A Creative website Developer, UI/UX Designer & Full Stack Developer</p>
+                    <a href="#about" class="btn">KNOW MORE</a>
+                </div>
+                <div class="profile-container">
+                    <div class="profile-img">
+                        <img src="headpic.png" alt="Fathima Shafrin Shihan">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="title-bar">—</div>
+                <h2>ABOUT ME</h2>
+                <h3>Who Am I</h3>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="pro.png" alt="Fathima Shafrin Shihan">
+                </div>
+                <div class="about-text">
+                    <p>I am a dedicated IT student at Esoft Metro Campus, and I'm very passionate about software development. With expertise in web development and design, I strive to create user-friendly and visually appealing digital experiences.</p>
+                    <a href="resume.pdf" class="btn" download="Fathima_Shafrin_Shihan_Resume.pdf">DOWNLOAD CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>What I Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Web Development</h3>
+                    <p>Creating responsive and dynamic websites using HTML, CSS, and JavaScript. Specializing in modern web technologies and best practices.</p>
+                </div>
+                <div class="service-card">
+                    <h3>UI/UX Design</h3>
+                    <p>Designing intuitive and beautiful user interfaces with focus on user experience, accessibility, and modern design principles.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Frontend Development</h3>
+                    <p>Building interactive and performant web applications with modern frameworks and responsive design techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 style="text-align: center;">Skills</h2>
+            <div class="skill-item">
+                <div class="skill-name">HTML & CSS</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">JavaScript</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Python</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">C#</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <h3 style="text-align: center; margin-top: 3rem; font-size: 2rem;">Professional Skills</h3>
+            <div class="skill-item">
+                <div class="skill-name">Computer Skills</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Designing Skills</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Attention to Detail</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 82%;"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">Communication</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Email: shafrin.shihan7@gmail.com</p>
+            <p>Phone: +94 775060786</p>
+            <a href="resume.pdf" class="btn" download="Fathima_Shafrin_Shihan_Resume.pdf">DOWNLOAD Resume</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/shafrin-shihan" target="_blank">LinkedIn</a>
+                <a href="https://github.com/shafrin0721/CODSOFT.git" target="_blank">GitHub</a>
+            </div>
+            <p>&copy; 2024 Fathima Shafrin Shihan. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

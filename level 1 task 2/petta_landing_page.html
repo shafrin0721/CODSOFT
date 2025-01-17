@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pettah - A Vibrant Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; 
+            color: #fff; 
+        }
+
+        h1, h2 {
+            color: #d35400; 
+            margin: 0; 
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        #hero { 
+            position: relative; 
+            height: 800px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: rgb(255, 255, 255); 
+            background-image: url('DSC01257.JPG'); 
+            background-size: cover; 
+            background-position: center; 
+        } 
+        #hero::before {
+             content: ''; 
+             position: absolute; 
+             top: 0; 
+             left: 0; 
+             width: 100%; 
+             height: 100%; 
+             background-color: rgba(0, 0, 0, 0.5);  z-index: 1; 
+            }
+            
+            #hero h1, 
+            #hero p { 
+                position: relative; z-index: 2; 
+            
+            } 
+            #hero h1 { 
+                font-size: 3em; 
+                font-weight: bold; 
+            } 
+            
+            #hero p {
+                font-size: 1.5em; 
+                margin: 10px 0; 
+            }
+
+        
+
+        /* Gallery Styles */
+        #gallery {
+            padding: 40px 20px; 
+            text-align: center; 
+        }
+
+        .image-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 15px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        .image-grid img {
+            width: 100%; 
+            height: auto; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        
+        section {
+            padding: 40px 20px; 
+            text-align: center; 
+        }
+
+        .about-card, .discovery-card {
+            max-width: 800px; 
+            margin: 20px auto; 
+            padding: 20px;
+            background-color: #333; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+        
+        .discovery-container, .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; 
+        }
+
+        .discovery, .blog-entry {
+            flex: 1 1 300px; 
+            padding: 20px;
+            border-radius: 5px; 
+            background-color: #333; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        
+        footer {
+            background: #333;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: #0a0a0a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #666;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Explore</a></li>
+                <li><a href="#description">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#discoveries and blogs">Discoveries and Blogs</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div>
+            <h1>Welcome to Pettah</h1>
+            <p>A vibrant neighborhood in Colombo, Sri Lanka.</p>
+            <p>Experience the vibrant culture and bustling markets of Colombo.</p>
+        </div>
+    </section>
+
+    <section id="description">
+        <h2>About Pettah</h2>
+        <div class="about-card">
+            <p style="font-size: 1.1em; line-height: 1.6;">Pettah is a neighborhood located east of the city center Fort and behind the Colombo Port. It is renowned for the Pettah Market, a series of open-air bazaars and markets, making it one of Sri Lanka's busiest commercial areas. The market is designed like a gigantic crossword puzzle, allowing visitors to explore its many shops and stalls from dawn till dusk.</p>
+            <p style="font-size: 1.1em; line-height: 1.6;">The name "Pettah" is derived from the Tamil word "Pettai," an Anglo-Indian term used to describe a suburb outside a fort. The Sinhala phrase "pita-kotuwa," meaning "outside the fort," aptly describes the area.</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="image-grid">
+            <img src="DSC01022.JPG" alt="Pettah Image 1">
+            <img src="DSC01059.JPG" alt="Pettah Image 2">
+            <img src="DSC01159.JPG" alt="Pettah Image 3">
+            <img src="DSC01165.JPG" alt="Pettah Image 4">
+            <img src="DSC01168.JPG" alt="Pettah Image 5">            
+            <img src="DSC01201.JPG" alt="Pettah Image 6">
+            <img src="DSC01207.JPG" alt="Pettah Image 7">     
+            <img src="DSC01317.JPG" alt="Pettah Image 9">
+            <img src="DSC01575.JPG" alt="Pettah Image 18">
+            <img src="DSC01182.JPG" alt="Pettah Image 19">
+            <img src="DSC01230.JPG" alt="Pettah Image 20">
+            <img src="DSC01231.JPG" alt="Pettah Image 21">
+            <img src="DSC01320.JPG" alt="Pettah Image 11">
+            <img src="DSC01365.JPG" alt="Pettah Image 12">
+            <img src="DSC01406.JPG" alt="Pettah Image 13">
+            <img src="DSC01278.JPG" alt="Pettah Image 24">
+            <img src="DSC01255.JPG" alt="Pettah Image 22">
+            <img src="DSC01238.JPG" alt="Pettah Image 23">
+            <img src="DSC01297.JPG" alt="Pettah Image 8">
+            <img src="DSC01333.JPG" alt="Pettah Image 10">
+            <img src="DSC01412.JPG" alt="Pettah Image 14">
+            <img src="DSC01472.JPG" alt="Pettah Image 15">
+            <img src="DSC01503.JPG" alt="Pettah Image 16">
+            <img src="DSC01541.JPG" alt="Pettah Image 17">
+            
+            
+        </div>
+    </section>
+    
+    <section id="discoveries and blogs">
+        <h2>Discoveries</h2>
+        <div class="discovery-container">
+            <div class="discovery">
+                <h3>Friends of the Market</h3>
+                <p>Learn about the local vendors and their unique offerings...</p>
+            </div>
+            <div class="discovery">
+                <h3>Keep the Market Alive</h>
+                <p>Discover ways to support local businesses...</p>
+            </div>
+            <div class="discovery">
+                <h3>Cultural Events</h3>
+                <p>Participate in local festivals and events that celebrate the rich culture of Pettah.</p>
+            </div>
+            <div class="discovery">
+                <h3>Shopping Tips</h3>
+                <p>Get the best deals and learn how to haggle like a local in Pettah's markets.</p>
+            </div>
+            <div class="discovery">
+                <h3>Food Adventures</h3>
+                <p>Explore the diverse culinary offerings from street food to traditional dishes.</p>
+            </div>
+        </div>
+
+        <h2>Blogs on Pettah</h2>
+        <div class="blog-container">
+            <div class="blog-entry">
+                <h3>Exploring the Vibrant Streets of Pettah</h3>
+                <p>Discover the bustling streets of Pettah...</p>
+            </div>
+            <div class="blog-entry">
+                <h3>A Taste of Pettah: Culinary Delights</h3>
+                <p>From street food to traditional dishes...</p>
+            </div>
+            <div class="blog-entry">
+                <h3>Cultural Heritage of Pettah</h3>
+                <p>Delve into the rich history and cultural heritage...</p>
+            </div>
+        </section>
+ <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/shafrin-shihan" target="_blank">LinkedIn</a>
+                <a href="https://github.com/shafrin0721/CODSOFT.git" target="_blank">GitHub</a>
+            </div>
+            <p>&copy; 2024 Fathima Shafrin Shihan. All rights reserved.</p>
+        </div>
+    </footer>
+    </body>
+    </html>
